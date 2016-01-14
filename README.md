@@ -2,19 +2,21 @@
 
 A simple Gulp build for October CMS, utilizing awesome Stylus libraries for fast, powerful ninja-like development.
 
+![](https://zippy.gfycat.com/DescriptiveYearlyIggypops.gif)
+
 ## Install ##
 
-Clone or download into a October CMS theme and run
+Clone or download into a October CMS theme and run:
 
     npm install --save
 
 ## Methodology ##
 
-The workflow is borrowed heavily from [Roots](https://github.com/jenius/roots), a static site compiler which features Jade and Stylus out of the box. I love Roots and use it often... but when a project requires the use of a CMS; [October CMS](http://https://octobercms.com/) is my go-to.
+The workflow is borrowed heavily from [Roots](https://github.com/jenius/roots), a static site compiler which features [Jade](http://jade-lang.com/) and [Stylus](http://stylus-lang.com/) out of the box. I love Roots and use it often... but when a project requires the use of a CMS; [October CMS](https://octobercms.com/) is my go-to.
 
 Missing the functionality of Roots while working on October CMS sites has brought me to make this Gulp build. This build is only focused on Stylus, because I'm unsure how Jade would work with October CMS. I may add Jade support down the road.
 
-### Stylus! ###
+## Stylus! ##
 
 The same workflow from Roots, these libraries make you feel like a CSS ninja.
 
@@ -29,7 +31,7 @@ The same workflow from Roots, these libraries make you feel like a CSS ninja.
  - [LiveReload](https://github.com/vohof/gulp-livereload) -
  Live updates in the browser, without refreshing.
 
-### Usage ###
+## Usage ##
 
 Running the command `gulp` in the installed directory will activate the default stream which:
 - Watches over your Stylus and HTML for changes
