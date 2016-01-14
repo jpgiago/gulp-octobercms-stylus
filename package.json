@@ -1,0 +1,21 @@
+{
+  "name": "gulp-octobercms-stylus",
+  "version": "1.0.0",
+  "description": "Stylus flavored OctoberCMS development, powered by Gulp.",
+  "dependencies": {
+    "axis": "^0.5.2",
+    "autoprefixer": "^6.2.3",
+    "gulp": "^3.9.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylus": "^2.2.0",
+    "gulp-postcss": "^6.0.1",
+    "lost": "^6.6.3",
+    "poststylus": "^0.2.2",
+    "gulp-plumber": "^0.6.6",
+    "gulp-util": "^3.0.7",
+    "gulp-livereload": "^3.8.1",
+    "rupture": "^0.6.1"
+  },
+  "devDependencies": {},
+  "author": "John Paul Giago"
+}
