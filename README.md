@@ -12,9 +12,9 @@ Clone or download into a October CMS theme and run:
 
 ## Methodology ##
 
-The workflow is borrowed heavily from [Roots](https://github.com/jenius/roots), a static site compiler which features [Jade](http://jade-lang.com/) and [Stylus](http://stylus-lang.com/) out of the box. I love Roots and use it often... but when a project requires the use of a CMS; [October CMS](https://octobercms.com/) is my go-to.
+The workflow is borrowed heavily from [Roots](https://github.com/jenius/roots), a static site compiler which features [Stylus](http://stylus-lang.com/) out of the box. I love Roots and use it often... but when a project requires the use of a CMS; [October CMS](https://octobercms.com/) is my go-to.
 
-Missing the functionality of Roots while working on October CMS sites has brought me to make this Gulp build. This build is only focused on Stylus, because I'm unsure how Jade would work with October CMS. I may add Jade support down the road.
+Missing the functionality of Roots while working on October CMS sites has brought me to make this Gulp build.
 
 ## Stylus! ##
 
@@ -28,8 +28,8 @@ The same workflow from Roots, these libraries make you feel like a CSS ninja.
  CSS library built on top of Stylus.
  - [Rupture](https://github.com/jenius/rupture) -
  Media Queries made simple.
- - [LiveReload](https://github.com/vohof/gulp-livereload) -
- Live updates in the browser, without refreshing.
+ - [BrowserSync](https://github.com/browsersync/browser-sync) -
+ Keep multiple browsers & devices in sync when building websites.
 
 ## Usage ##
 

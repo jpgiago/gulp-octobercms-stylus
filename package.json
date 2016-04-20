@@ -1,6 +1,6 @@
 {
   "name": "gulp-octobercms-stylus",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stylus flavored OctoberCMS development, powered by Gulp.",
   "dependencies": {
     "axis": "^0.5.2",

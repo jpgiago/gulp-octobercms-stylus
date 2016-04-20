@@ -9,39 +9,41 @@ var gulp         = require('gulp'),
     axis         = require('axis'),
     rupture      = require('rupture'),
     lost         = require('lost'),
-    livereload   = require('gulp-livereload');
+    browserSync  = require('browser-sync'),
+    reload       = browserSync.reload;
 
-gulp.task('styles', function() {
-  gulp.src('assets/css/stylus/*.styl')
-    .pipe(plumber({errorHandler: function (err) { gutil.beep(); console.log(err);}}))   // Beeps if there is an error
-    .pipe(sourcemaps.init())                              // Start Sourcemaps
-    .pipe(stylus({                                        // Pipe gulp-stylus through...
+gulp.task('browser-sync', function() {
+  browserSync({
+      files: [ // Directories of your OctoberCMS files, HTML/TXT/JS... etc
+        'content/*.htm',
+        'content/static-pages/*.htm',
+        'content/placeholder/*.txt',
+        'layouts/*.htm',
+        'pages/*.htm',
+        'partials/*.htm',
+        'assets/javascript/*.js'
+      ],
+      proxy: {
+        target: "localhost:8888/yourthemehere" // Enter your dev environment proxy
+      }
+    });
+    gulp.watch('assets/css/stylus/*.styl', ['stylus']).on('change', reload); // Watches all Stylus files for changes
+  });
+
+gulp.task('stylus', function() {
+  gulp.src('assets/css/stylus/main.styl') // Compiles main.styl ... intended for a manifest file ie: http://sassdirector.com/examples/index.html (using Sass examples)
+    .pipe(plumber({errorHandler: function (err) { gutil.beep(); console.log(err);}}))
+    .pipe(stylus({
       use: [
-        poststylus([                                      // ... and use PostStylus to render autoprefixer + Lost Grid
+        poststylus([
           'autoprefixer',
           'lost'
         ]),
-        axis(),                                           // ... and some awesome Stylus goodies
+        axis(),
         rupture()
       ]
     }))
-    .pipe(sourcemaps.write('./'))                         // Render Sourcemaps
-    .pipe(gulp.dest('assets/css/'))
-    .pipe(livereload());
+    .pipe(gulp.dest('assets/css/')) // Compile everything into one file, main.css
 });
 
-gulp.task('watch', function() {
-    livereload.listen({start: true});                     // Starts LiveReload plugin
-    var livereloadPage = function() {
-        livereload.reload();
-    };
-    gulp.watch([
-        'content/*.htm',                                  // Watch OctoberCMS .htm files
-        'layouts/*.htm',
-        'pages/*.htm',
-        'partials/*.htm'], livereloadPage );
-    gulp.watch([
-        'assets/css/stylus/*.styl'], ['styles'] );        // Watch for .styl files
-})
-
-gulp.task('default', ['watch']);
+gulp.task('default', ['browser-sync']);
