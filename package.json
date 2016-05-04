@@ -13,7 +13,6 @@
     "poststylus": "^0.2.2",
     "gulp-plumber": "^0.6.6",
     "gulp-util": "^3.0.7",
-    "gulp-livereload": "^3.8.1",  
     "browser-sync": "^2.11.2",
     "rupture": "^0.6.1"
   },
